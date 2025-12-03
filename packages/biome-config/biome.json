@@ -1,0 +1,206 @@
+{
+  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
+
+  "files": {
+    "ignore": [
+      "node_modules",
+      ".next",
+      ".turbo",
+      "dist",
+      ".cache",
+      "coverage",
+      "public",
+      "next-env.d.ts",
+      "package-lock.json",
+      "yarn.lock",
+      "pnpm-lock.yaml",
+      "components/ui/**"
+    ]
+  },
+
+  "organizeImports": {
+    "enabled": true
+  },
+
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineWidth": 80,
+    "lineEnding": "lf",
+    "formatWithErrors": false
+  },
+
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "single",
+      "jsxQuoteStyle": "double",
+      "semicolons": "asNeeded",
+      "trailingCommas": "es5",
+      "arrowParentheses": "always",
+      "bracketSpacing": true,
+      "bracketSameLine": false,
+      "quoteProperties": "asNeeded"
+    }
+  },
+
+  "json": {
+    "formatter": {
+      "enabled": true,
+      "indentWidth": 2,
+      "indentStyle": "space"
+    }
+  },
+
+  "css": {
+    "formatter": {
+      "enabled": true,
+      "indentWidth": 2,
+      "indentStyle": "space",
+      "lineWidth": 80,
+      "quoteStyle": "single"
+    },
+    "linter": {
+      "enabled": true
+    }
+  },
+
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+
+      "correctness": {
+        "noUnusedVariables": "warn",
+        "noUnusedImports": "error",
+        "useExhaustiveDependencies": "warn",
+        "useHookAtTopLevel": "error",
+        "noUndeclaredVariables": "error",
+        "noUnusedPrivateClassMembers": "warn",
+        "noInvalidUseBeforeDeclaration": "error"
+      },
+
+      "style": {
+        "noVar": "warn",
+        "useConst": "warn",
+        "useFragmentSyntax": "warn",
+        "noInferrableTypes": "warn",
+        "useImportType": "error",
+        "useNodejsImportProtocol": "error",
+        "useShorthandArrayType": "warn",
+        "useTemplate": "warn",
+        "noNonNullAssertion": "warn",
+        "useSelfClosingElements": "warn"
+      },
+
+      "suspicious": {
+        "noExplicitAny": "error",
+        "noArrayIndexKey": "warn",
+        "noConsoleLog": "warn",
+        "noDoubleEquals": "error",
+        "noEmptyBlockStatements": "warn",
+        "noAssignInExpressions": "error",
+        "noAsyncPromiseExecutor": "error",
+        "noDuplicateCase": "error",
+        "noDuplicateClassMembers": "error",
+        "noDuplicateObjectKeys": "error",
+        "noFocusedTests": "error",
+        "noSkippedTests": "warn"
+      },
+
+      "complexity": {
+        "noBannedTypes": "error",
+        "noUselessFragments": "warn",
+        "noUselessSwitchCase": "warn",
+        "noUselessThisAlias": "warn",
+        "noUselessTypeConstraint": "warn",
+        "noVoid": "warn",
+        "noWith": "error",
+        "useFlatMap": "warn",
+        "useOptionalChain": "warn",
+        "noForEach": "warn"
+      },
+
+      "security": {
+        "noDangerouslySetInnerHtml": "error",
+        "noGlobalEval": "error"
+      },
+
+      "a11y": {
+        "recommended": true,
+        "noBlankTarget": "error",
+        "useAltText": "error",
+        "useButtonType": "error",
+        "useValidAnchor": "error"
+      },
+
+      "performance": {
+        "noAccumulatingSpread": "warn",
+        "noDelete": "warn"
+      },
+
+      "nursery": {
+        "useSortedClasses": {
+          "level": "warn",
+          "options": {
+            "attributes": ["className", "class", "tw"],
+            "functions": ["cn", "clsx", "cva", "twMerge", "twJoin"]
+          }
+        }
+      }
+    }
+  },
+
+  "overrides": [
+    {
+      "include": ["**/*.ts", "**/*.tsx"],
+      "linter": {
+        "rules": {
+          "correctness": {
+            "noUndeclaredVariables": "off"
+          }
+        }
+      }
+    },
+    {
+      "include": [
+        "*.config.ts",
+        "*.config.js",
+        "*.config.mjs",
+        "next.config.ts",
+        "next.config.mjs",
+        "tailwind.config.ts",
+        "postcss.config.js",
+        "postcss.config.mjs"
+      ],
+      "linter": {
+        "rules": {
+          "style": {
+            "noDefaultExport": "off"
+          }
+        }
+      }
+    },
+    {
+      "include": [
+        "**/*.test.ts",
+        "**/*.test.tsx",
+        "**/*.spec.ts",
+        "**/*.spec.tsx"
+      ],
+      "linter": {
+        "rules": {
+          "suspicious": {
+            "noExplicitAny": "error"
+          }
+        }
+      }
+    }
+  ]
+}

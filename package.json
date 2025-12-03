@@ -2,19 +2,24 @@
   "name": "turborepo-test",
   "private": true,
   "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev",
-    "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "check-types": "turbo run check-types"
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "lint": "turbo lint",
+    "lint:root": "biome lint --no-ignore .",
+    "lint:fix": "biome lint --write --no-ignore .",
+    "format": "biome format --write .",
+    "check": "biome check --write .",
+    "check:strict": "biome check --write --no-ignore .",
+    "check:no-disable": "node scripts/check-no-disable.mjs",
+    "validate": "pnpm check:no-disable && pnpm check:strict",
+    "prepare": "husky"
   },
   "devDependencies": {
-    "prettier": "^3.6.2",
-    "turbo": "^2.6.1",
-    "typescript": "5.9.2"
+    "@biomejs/biome": "^1.9.4",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.2",
+    "turbo": "^2.3.0",
+    "typescript": "^5.6.3"
   },
-  "packageManager": "pnpm@9.0.0",
-  "engines": {
-    "node": ">=18"
-  }
+  "packageManager": "pnpm@9.14.2"
 }
