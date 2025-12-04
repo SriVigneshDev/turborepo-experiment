@@ -9,14 +9,12 @@ interface ButtonProps {
   type: 'submit' | 'reset' | 'button' | undefined
 }
 
-export const Button = ({ children, className, appName, type }: ButtonProps) => {
-  return (
-    <button
-      type={type}
-      className={className}
-      onClick={() => alert(`Hello from your ${appName} app!`)}
-    >
-      {children}
-    </button>
-  )
-}
+export const Button = ({ children, className, appName, type }: ButtonProps) => (
+  <button
+    type={type}
+    className={className}
+    onClick={() => alert(`Hello from your ${appName} app!`)}
+  >
+    {children}
+  </button>
+)
