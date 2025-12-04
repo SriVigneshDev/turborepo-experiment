@@ -18,6 +18,11 @@
       "cache": false,
       "outputs": []
     },
+    "type-check": {
+      "dependsOn": ["^type-check"],
+      "inputs": ["**/*.ts", "**/*.tsx", "tsconfig.json", "tsconfig.*.json"],
+      "outputs": []
+    },
     "build": {
       "dependsOn": ["^build"],
       "outputs": [".next/**", "!.next/cache/**"]

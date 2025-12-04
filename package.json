@@ -13,7 +13,8 @@
     "check:strict": "biome check --write --no-ignore .",
     "check:no-disable": "node scripts/check-no-disable.mjs",
     "validate": "pnpm check:no-disable && pnpm check:strict",
-    "prepare": "husky"
+    "prepare": "husky",
+    "type-check": "turbo run type-check"
   },
   "devDependencies": {
     "@repo/biome-config": "workspace:*",
