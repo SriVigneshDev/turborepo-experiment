@@ -65,7 +65,17 @@
     "actions": {
       "source": {
         "organizeImports": {
-          "level": "on"
+          "level": "on",
+          "options": {
+            "groups": [
+              [":TYPES:"],
+              ["react", "react-*"],
+              ["next", "next/*", "next/**"],
+              [":PACKAGES:"],
+              ["@app/**"],
+              ["../**", "./**"]
+            ]
+          }
         }
       }
     }
@@ -487,7 +497,9 @@
         "playwright.config.*",
         "drizzle.config.*",
         "middleware.*",
-        "instrumentation.*"
+        "instrumentation.*",
+        "**/next.config.*",
+        "apps/*/next.config.*"
       ],
       "linter": {
         "rules": {

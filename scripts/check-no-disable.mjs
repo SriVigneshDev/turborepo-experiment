@@ -38,7 +38,9 @@ function getAllFiles(dir, files = []) {
     for (const item of items) {
       const fullPath = join(dir, item)
 
-      if (IGNORE_DIRS.includes(item)) continue
+      if (IGNORE_DIRS.includes(item)) {
+        continue
+      }
 
       const stat = statSync(fullPath)
 
