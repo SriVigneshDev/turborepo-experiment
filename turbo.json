@@ -3,12 +3,8 @@
   "tasks": {
     "//#biome-lint": {
       "inputs": [
-        "apps/**/*.ts",
-        "apps/**/*.tsx",
-        "apps/**/*.js",
-        "apps/**/*.jsx",
-        "packages/**/*.ts",
-        "packages/**/*.tsx",
+        "apps/**/*.{ts,tsx,js,jsx}",
+        "packages/**/*.{ts,tsx,js,jsx}",
         "biome.json",
         "packages/biome-config/biome.json"
       ],
