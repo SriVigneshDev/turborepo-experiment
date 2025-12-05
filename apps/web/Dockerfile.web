@@ -20,7 +20,7 @@ ENV PATH="$PNPM_HOME:$PATH"
 RUN corepack enable && corepack prepare pnpm@9.14.2 --activate
 
 # --- Install turbo globally for monorepo build orchestration ---
-RUN pnpm add -g turbo@^2.3.0
+RUN pnpm add -g turbo@^2.6.3
 
 # ============================================
 # ✂️ PRUNE STAGE - Extract only what "web" needs
