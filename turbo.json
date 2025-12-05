@@ -30,14 +30,16 @@
         "$TURBO_DEFAULT$",
         "!Dockerfile*",
         "!*.dockerfile",
-        "!.dockerignore"
+        "!.dockerignore",
+        "!.next/**"
       ],
       "outputs": [
         ".next/**",
         "!.next/cache/**",
         "!.next/trace/**",
         "!.next/analyze/**",
-        "!.next/*.log"
+        "!.next/*.log",
+        "!.next/BUILD_ID"
       ]
     },
     "dev": {
