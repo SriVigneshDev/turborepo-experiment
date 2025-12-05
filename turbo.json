@@ -26,6 +26,12 @@
     },
     "build": {
       "dependsOn": ["^build"],
+      "inputs": [
+        "$TURBO_DEFAULT$",
+        "!Dockerfile*",
+        "!*.dockerfile",
+        "!.dockerignore"
+      ],
       "outputs": [".next/**", "!.next/cache/**"]
     },
     "dev": {
