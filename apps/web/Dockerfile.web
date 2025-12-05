@@ -70,12 +70,13 @@ COPY --from=pruner /app/out/full/ .
 # SECURE: Using BuildKit secrets (never stored in image layers)
 # --mount=type=secret: Mounts secret file at /run/secrets/<id>
 # Secrets are only available during this RUN command and not persisted
+# --cache=remote:rw: Read and write to Vercel remote cache (replaces deprecated --remote-only)
 RUN --mount=type=cache,id=turbo-cache,target=.turbo \
     --mount=type=secret,id=TURBO_TOKEN \
     --mount=type=secret,id=TURBO_TEAM \
     TURBO_TOKEN=$(cat /run/secrets/TURBO_TOKEN) \
     TURBO_TEAM=$(cat /run/secrets/TURBO_TEAM) \
-    turbo build --filter=web... --remote-only
+    turbo build --filter=web... --cache=remote:rw
 
 # ============================================
 # 🚀 PRODUCTION STAGE - Minimal Alpine (~25MB)
