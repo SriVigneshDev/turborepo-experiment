@@ -20,9 +20,7 @@
       "outputs": []
     },
     "type-check": {
-      "dependsOn": ["^type-check"],
-      "inputs": ["**/*.ts", "**/*.tsx", "tsconfig.json", "tsconfig.*.json"],
-      "outputs": []
+      "dependsOn": ["^type-check"]
     },
     "build": {
       "dependsOn": ["^build"],
@@ -33,14 +31,8 @@
         "!.dockerignore",
         "!.next/**"
       ],
-      "outputs": [
-        ".next/**",
-        "!.next/cache/**",
-        "!.next/trace/**",
-        "!.next/analyze/**",
-        "!.next/*.log",
-        "!.next/BUILD_ID"
-      ]
+      "outputs": [".next/**", "!.next/cache/**", "!.next/standalone/**"],
+      "outputLogs": "new-only"
     },
     "dev": {
       "cache": false,
