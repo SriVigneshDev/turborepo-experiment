@@ -4,6 +4,8 @@
   "scripts": {
     "dev": "turbo dev",
     "build": "turbo build",
+    "clean": "turbo daemon stop && rm -rf .turbo/cache .turbo/runs node_modules/.cache/turbo apps/*/.turbo apps/*/.next",
+    "rebuild": "pnpm clean && pnpm build",
     "lint": "turbo run //#biome-lint",
     "format": "turbo run //#biome-format",
     "check": "turbo run //#biome-check",
